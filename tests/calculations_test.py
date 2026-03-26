@@ -34,6 +34,16 @@ def test_area_of_circle_zero_radius():
     assert result == 0
 
 
+def test_area_of_circle_negative_radius():
+    """Test with a negative radius."""
+    # Arrange
+    radius = -5
+
+    # Act & Assert
+    with pytest.raises(ValueError):
+        area_of_circle(radius)
+
+
 def test_get_nth_fibonacci_zero():
     """Test with n=0."""
     # Arrange
@@ -67,10 +77,14 @@ def test_get_nth_fibonacci_ten():
     result = get_nth_fibonacci(n)
 
     # Assert
-    assert result == 89
+    assert result == 55
 
-# python -m venv .venv/calculations
-# source .venv/calculations/bin/activate
-# pip install -r requirements.txt
-# pip install pytest coverage pytest-cov
-# pytest --cov=src --verbose
+
+def test_get_nth_fibonacci_negative():
+    """Test with a negative n."""
+    # Arrange
+    n = -1
+
+    # Act & Assert
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(n)

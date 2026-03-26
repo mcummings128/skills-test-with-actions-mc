@@ -68,9 +68,3 @@ def test_get_nth_fibonacci_ten():
 
     # Assert
     assert result == 89
-
-# python -m venv .venv/calculations
-# source .venv/calculations/bin/activate
-# pip install -r requirements.txt
-# pip install pytest coverage pytest-cov
-# pytest --cov=src --verbose
